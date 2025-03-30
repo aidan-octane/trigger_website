@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POST Request Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        async function sendPost() {
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: "Hello, server!" })
+            });
+            const data = await response.json();
+            alert("Server says: " + JSON.stringify(data));
+        }
+
+        var socket = io();
+        socket.on("user_count", function(count) {
+            document.getElementById("count").innerText=count;
+        });
+
+    </script>
+</head>
+<body>
+    <button onclick="sendPost()">Send POST Request</button>
+    <h1>Active Users: <span id="count">0</span></h1>
+</body>
+</html>
