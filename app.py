@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template, session
 from flask_socketio import SocketIO, emit
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 import os
 import requests
 import json
