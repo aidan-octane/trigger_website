@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template, session
-from flask_socketio import SocketIO, emit
+# from flask_socketio import SocketIO, emit
 # from dotenv import load_dotenv
 # load_dotenv()
 import os
@@ -11,7 +11,7 @@ headers = {'Content-type': 'application/json'}
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'FALLBACK_KEY')
-socketio = SocketIO(app, cors_allowed_origins="*")
+# socketio = SocketIO(app, cors_allowed_origins="*")
 
 
 
