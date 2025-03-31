@@ -5,7 +5,7 @@ from flask_socketio import SocketIO, emit
 import os
 import requests
 import json
-from keys import endpoint
+# from keys import endpoint
 headers = {'Content-type': 'application/json'}
 
 
@@ -14,9 +14,8 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'FALLBACK_KEY')
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 
-active_users = 0
 
-
+endpoint = os.getenv('TRIGGER_ENDPOINT')
 
 # @socketio.on('connect')
 # def handle_connect():
